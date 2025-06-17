@@ -340,6 +340,7 @@ class Model(nn.Module):
             cross_mask=False
         )
         dec_out = self.decoder_projector(dec_out)
+        dec_out =dec_out[:, -self.pred_len:, :] 
 
 
         # denormalization
